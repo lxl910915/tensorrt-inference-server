@@ -629,7 +629,7 @@ class ServerStatusContext:
         status_buf = cast(cstatus, POINTER(c_byte * cstatus_len.value))[0]
 
         status = ServerStatus()
-        status.ParseFromString(status_buf)
+        status.ParseFromString(''.join(map(chr,status_buf[:])))
         return status
 
     def get_last_request_id(self):
@@ -1024,7 +1024,7 @@ class SharedMemoryControlContext:
         status_buf = cast(cstatus, POINTER(c_byte * cstatus_len.value))[0]
 
         status = SharedMemoryStatus()
-        status.ParseFromString(status_buf)
+        status.ParseFromString(''.join(map(chr,status_buf[:])))
         return status
 
     def get_last_request_id(self):

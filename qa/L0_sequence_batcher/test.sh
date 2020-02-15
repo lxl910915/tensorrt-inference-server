@@ -167,7 +167,7 @@ rm -fr modelsv && mkdir modelsv
 MODELS=""
 for BACKEND in $BACKENDS; do
   if [[ $BACKENDS == *"plan"* ]]; then
-    MODELS="$MODELS $DATADIR/qa_sequence_model_repository/plan_sequence_float32"
+    MODELS="$MODELS $DATADIR/qa_variable_sequence_model_repository/plan_sequence_float32"
   elif [[ $BACKENDS == *"netdef"* ]]; then
     MODELS="$MODELS $DATADIR/qa_variable_sequence_model_repository/netdef_sequence_int32"
   elif [[ $BACKENDS == *"graphdef"* ]]; then
